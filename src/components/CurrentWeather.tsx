@@ -21,7 +21,7 @@ export default function CurrentWeather({
       <div className="text-4xl xs:text-5xl text-center drop-shadow-md">
         {city}
       </div>
-      <div className="text-7xl xs:text-8xl font-thin drop-shadow-sm">
+      <div className="text-7xl xs:text-8xl font-thin drop-shadow-lg">
         {Math.round(temp)}º
       </div>
       <div className="flex items-center text-xl xs:text-2xl">
