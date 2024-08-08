@@ -15,7 +15,10 @@ export default function ForecastItem({
   const { min, max } = dailyTemp;
 
   return (
-    <div className="flex flex-col items-center bg-white bg-opacity-15 rounded-2xl py-2 px-3 xs:px-4 xs:text-lg">
+    <div
+      className="flex flex-col items-center bg-white bg-opacity-15 rounded-2xl py-2 px-3 xs:px-4 xs:text-lg"
+      data-testid="forecast-item"
+    >
       <div className="">{day}</div>
       <div className="-m-6">
         <Image

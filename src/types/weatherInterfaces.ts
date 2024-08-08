@@ -19,6 +19,7 @@ export interface ICurrentWeather {
   visibility: number;
   wind_speed: number;
   wind_deg: number;
+  wind_gust: number;
   weather: Weather[];
 }
 

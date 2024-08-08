@@ -64,9 +64,6 @@ export default function Home() {
     }
   }, [getLocationError, fetchDataError]);
 
-  console.log(userLocation);
-  console.log(data);
-
   return (
     <main className="flex flex-col items-center pt-10 max-lg:max-w-[500px] mx-auto">
       {error && <div className="m-5 text-red-500">Error: {error}</div>}

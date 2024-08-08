@@ -30,6 +30,6 @@ export async function fetchLocationWeather(
     return await response.json();
   } catch (error) {
     console.error(`Error fetching data: ${(error as Error).message}`);
-    throw new Error();
+    throw new Error((error as Error).message);
   }
 }
