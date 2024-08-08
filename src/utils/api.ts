@@ -1,7 +1,8 @@
+import { getBackUrl } from "@/config/config";
 import { Location, LocationInput } from "@/types/locationInterfaces";
 import { WeatherData } from "@/types/weatherInterfaces";
 
-const backurl = "localhost:4000";
+const backUrl = getBackUrl();
 
 interface FetchLocationWeather {
   locations: Location[];
@@ -19,9 +20,7 @@ export async function fetchLocationWeather(
     if (lon === null || lat === null) {
       return null;
     }
-    const response = await fetch(
-      `http://${backurl}/weather?lon=${lon}&lat=${lat}`
-    );
+    const response = await fetch(`${backUrl}/weather?lon=${lon}&lat=${lat}`);
 
     if (!response.ok) {
       throw new Error(`Failed to fetch data: ${response.statusText}`);
