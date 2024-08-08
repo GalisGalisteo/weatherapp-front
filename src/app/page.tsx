@@ -1,18 +1,18 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 import useFetchData from "@/hooks/useFetchData";
 import useGetLocation from "@/hooks/useGetLocation";
 
 import CurrentWeather from "@/components/CurrentWeather";
 import ForecastWeather from "@/components/ForecastWeather/ForecastWeather";
-import Map from "@/components/Map";
 
 import { fetchLocationWeather } from "@/utils/api";
 import { LocationInput } from "@/types/locationInterfaces";
 import LoadingIcon from "@/components/common/LoadingIcon";
 import Button from "@/components/common/Button";
+import dynamic from "next/dynamic";
 
 export default function Home() {
   const [location, setLocation] = useState<LocationInput | null>(null);
@@ -63,6 +63,16 @@ export default function Home() {
       setError(null);
     }
   }, [getLocationError, fetchDataError]);
+
+  // importing Map dinamicly to fix compatibility issues with SSR
+  const Map = useMemo(
+    () =>
+      dynamic(() => import("@/components/Map"), {
+        loading: () => <p>A map is loading</p>,
+        ssr: false,
+      }),
+    []
+  );
 
   return (
     <main className="flex flex-col items-center pt-10 max-lg:max-w-[500px] mx-auto">
