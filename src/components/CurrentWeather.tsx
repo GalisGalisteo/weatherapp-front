@@ -41,7 +41,7 @@ export default function CurrentWeather({
           <div className="xs:text-lg">Humidity</div>
           <div className="text-xl xs:text-2xl">{Math.round(humidity)}%</div>
         </div>
-        <div>{main}</div>
+        <div className="text-xl xs:text-2xl">{main}</div>
         <div>
           <div className="xs:text-lg">Feels like</div>
           <div className="text-xl xs:text-2xl">{Math.round(feels_like)}º</div>
