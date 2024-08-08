@@ -16,10 +16,10 @@ export default function ForecastItem({
 
   return (
     <div
-      className="flex flex-col items-center bg-white bg-opacity-15 rounded-2xl py-2 px-3 xs:px-4 xs:text-lg"
+      className="flex flex-col items-center bg-white bg-opacity-15 rounded-2xl py-2 px-[9px] xxs:px-3 xs:px-4 xs:text-lg"
       data-testid="forecast-item"
     >
-      <div className="">{day}</div>
+      <div>{day}</div>
       <div className="-m-6">
         <Image
           width={90}
@@ -29,8 +29,8 @@ export default function ForecastItem({
         />
       </div>
       <div className="flex gap-2">
-        <div className="">{Math.round(min)}º</div>
-        <div className="">{Math.round(max)}º</div>
+        <div>{Math.round(min)}º</div>
+        <div>{Math.round(max)}º</div>
       </div>
     </div>
   );
