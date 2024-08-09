@@ -95,7 +95,11 @@ export default function Home() {
           <Button className="lg:hidden" onClick={refetch}>
             Refresh
           </Button>
-          <Map locations={data.locations} setLocation={setLocation} />
+          <Map
+            locations={data.locations}
+            setLocation={setLocation}
+            userLocation={location}
+          />
         </>
       ) : (
         <div className="flex h-[500px]">

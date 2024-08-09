@@ -7,16 +7,26 @@ import { LocationInput, Location } from "@/types/locationInterfaces";
 interface MapNearbyLocationsProps {
   locations: Location[];
   setLocation: (location: LocationInput) => void;
+  userLocation: LocationInput | null;
 }
 
 export default function Map({
   locations,
   setLocation,
+  userLocation,
 }: MapNearbyLocationsProps) {
+  if (!userLocation) {
+    return (
+      <div className="m-5 text-red-500">
+        Cannot show the map. User location not found
+      </div>
+    );
+  }
+  const { lon, lat } = userLocation;
   return (
     <MapContainer
       attributionControl={false}
-      center={[37.3024, -7.3429]}
+      center={[lat, lon]}
       zoom={13}
       className="w-screen"
       style={{ height: "400px" }}

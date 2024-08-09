@@ -21,7 +21,13 @@ const mockSetLocation = jest.fn();
 
 describe("Map component", () => {
   beforeEach(() => {
-    render(<Map locations={mockLocations} setLocation={mockSetLocation} />);
+    render(
+      <Map
+        locations={mockLocations}
+        setLocation={mockSetLocation}
+        userLocation={{ lat: 37.3024, lon: -7.3429 }}
+      />
+    );
   });
 
   test("renders the map container", () => {
