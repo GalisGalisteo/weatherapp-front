@@ -53,11 +53,11 @@ This project serves as the frontend interface for the WeatherApp, enabling users
 
 5. If you want to start the production build:
    ```sh
-   npm run buld
+   npm run build
    npm run start
    ```
 
-6. Open your browser and navigate to \`http://localhost:3000\`.
+6. Open your browser and navigate to http://localhost:3000.
 
 ## Project Structure
 
