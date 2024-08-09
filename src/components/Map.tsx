@@ -15,7 +15,7 @@ export default function Map({
   setLocation,
   userLocation,
 }: MapNearbyLocationsProps) {
-  if (!userLocation) {
+  if (!userLocation?.lat || !userLocation?.lon) {
     return (
       <div className="m-5 text-red-500">
         Cannot show the map. User location not found

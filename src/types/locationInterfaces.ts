@@ -1,6 +1,6 @@
 export interface LocationInput {
-  lon: number;
-  lat: number;
+  lon: number | null;
+  lat: number | null;
 }
 
 export interface Location {
