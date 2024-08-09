@@ -56,7 +56,7 @@ describe("fetchLocationWeather", () => {
     const data = await fetchLocationWeather(mockLocationInput);
 
     expect(fetch).toHaveBeenCalledWith(
-      `http://localhost:4000/weather?lon=${mockLocationInput.lon}&lat=${mockLocationInput.lat}`
+      `https://api-weatherapp-4e636462236d.herokuapp.com/weather?lon=${mockLocationInput.lon}&lat=${mockLocationInput.lat}`
     );
     expect(data).toEqual(mockFetchResponse);
   });
